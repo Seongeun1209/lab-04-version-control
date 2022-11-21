@@ -17,7 +17,8 @@ Follow the instructions line-by-line.
 Write the command you used to do this below.
 ----------
 
-
+touch temp.txt
+nano temp.txt
 
 ==========
 3. Open another terminal
@@ -36,6 +37,10 @@ Quit and save when you're done.
 What command did you use to do this?
 ----------
 
+touch hello.sh
+nano hello.sh
+#!/bin/bash
+echo "hi there!"
 
 ==========
 9. Change the permissions (modify) on hello.sh so that the *user* (u) can *execute* (x) it: 
@@ -43,6 +48,7 @@ What command did you use to do this?
 Write the commands that you used to do this below.
 ----------
 
+chmod u+x hello.sh
 
 ==========
 10. Run your script (hello.sh).
@@ -50,21 +56,30 @@ Write the commands that you used to do this below.
 How did you do this?  What was the output?
 ----------
 
+./hello.sh
+hi there!
 
 ==========
 11. Change to the root directory.  Try running your script again (hello.sh).  What was the output (if there's an error, write it out)?
 ----------
 
+cd /.
+./hello.sh
+bash: ./hello.sh: No such file or directory
 
 ==========
 12. Now trying using the full, absolute path to your script (that is, starting with /...).  What did you write in?  What did it do?
 ----------
 
+/c/Users/Seongeun Kim/hello.sh
+/c/Users/Seongeun: line 1: Stopping: command not found
+and more...
 
 ==========
 13.  Go back to the directory that your hello.sh script was in.  What command did you use to change to this directory? 
 ----------
 
+cd ~
 
 ==========
 14. Type in the following command:
@@ -74,6 +89,7 @@ echo $PATH
 Write down the output of this command
 ----------
 
+/c/Users/Seongeun Kim/bin:/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/mingw64/bin:/usr/bin:/c/Users/Seongeun Kim/bin:/c/Program Files (x86)/Common Files/Intel/Shared Files/cpp/bin/Intel64:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0:/c/Windows/System32/OpenSSH:/c/Program Files/Csound6_x64/bin:/c/Program Files (x86)/Common Files/Propellerhead Software/ReWire:/c/Program Files/Common Files/Propellerhead Software/ReWire:/c/Program Files/dotnet:/cmd:/c/Users/Seongeun Kim/AppData/Local/Microsoft/WindowsApps:/c/Program Files/GPAC:/usr/bin/vendor_perl:/usr/bin/core_perl
 
 ==========
 15. Type in the following command to show all environment variables:
@@ -83,6 +99,8 @@ env
 Write down the last two lines of output for this command
 ----------
 
+OLDPWD=/
+_=/usr/bin/env
 
 ==========
 16. Set your PATH to include your home directory.  Do the following (substituting student or username for professor)
@@ -96,6 +114,7 @@ echo $PATH
 Write down the output of the last command.  It should include your home folder.
 ----------
 
+/c/Users/Seongeun Kim/bin:/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/mingw64/bin:/usr/bin:/c/Users/Seongeun Kim/bin:/c/Program Files (x86)/Common Files/Intel/Shared Files/cpp/bin/Intel64:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0:/c/Windows/System32/OpenSSH:/c/Program Files/Csound6_x64/bin:/c/Program Files (x86)/Common Files/Propellerhead Software/ReWire:/c/Program Files/Common Files/Propellerhead Software/ReWire:/c/Program Files/dotnet:/cmd:/c/Users/Seongeun Kim/AppData/Local/Microsoft/WindowsApps:/c/Program Files/GPAC:/usr/bin/vendor_perl:/usr/bin/core_perl:/Users/Seongeun
 
 ==========
 17.  Go back to root (/)
@@ -107,6 +126,8 @@ hello.sh
 It should work now!  What is the output?
 ----------
 
+Had problems
+When setting PATH to include home directory, I used the command, PATH=$PATH:Users/Seongeun Kim but it didn't go through. My username has a space in it, which I think is the reason it didn't work. I would get the output, bash: Kim: command not found. When I tried to do the PATH command using "Seongeun" or "Seongeun_Kim", it would go through but then doing the next question wouldn't work because those are not the names of my username.
 
 ==========
 18.  Save this file in the repository that you created from parts 1 and 2.
